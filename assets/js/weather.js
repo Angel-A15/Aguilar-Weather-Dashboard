@@ -1,27 +1,38 @@
-// var apiKey = 966a05338762aed9f430379fd9d68bf9;
-var fetchBtn = document.querySelector('fetchBtn')
+var apiKey = "966a05338762aed9f430379fd9d68bf9";
 var statsContainer = document.getElementById('stats');
+var searchValue = document.querySelector("#fetchBtn")
 
 
-// //function for current searched city
-// var crntCityWeather = function(){
-//     //request the github api URL
-//     var apiUrl = "https://api.openweathermap.org/data/3.0/" + "onecall?lat={lat}&lon={lon}&direction=desc&appid={apiKy}";
+function searchBtn(event){
+  event.preventDefault();
 
-//     //make a get request to url
-//     fetch(apiUrl).then(function(response){
+    //will fetch the information the user is looking for
+    var cityVal = searchValue.value;
 
-//         if(response.ok) {
+    //calling weather api and passing the city name for the api call
+    getWeatherApi(cityVal);
 
-//             response.json().then(function(data){
-//                 displayIssues(data);
-//             })
-//         }
-//     })
-// }
+    //will call local storage function inside later after creation
+    weatherStorage(cityVal);
 
-function getApi(){
-    var requestUrl = "https://api.openweathermap.org/data/3.0/" + "onecall?lat={lat}&lon={lon}&direction=desc&appid={apiKy}";
+}
+
+function weatherStorage(city){
+
+    var storage = JSON.parse(localStorage.getItem("weatherHistory"));
+        if(storage===null){
+            storage = [] 
+        }
+        storage.push(city)
+        localStorage.setItem("weatherHistory", JSON.stringify(storage));
+        
+        //calling fucntion after to fetch data after storing value into LS
+        getWeatherApi();
+}
+
+function getWeatherApi(cityName){
+
+    fetch("https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={apiKey}");
 
     fetch(requestUrl)
         .then(function(response){
@@ -35,6 +46,7 @@ function getApi(){
     });
 
 }
+
 
 //fetch search city data/havent made getApi function
 fetchBtn.addEventListener('click', getApi); 
