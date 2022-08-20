@@ -26,7 +26,7 @@ actions such as:
   * Save city in search history; when city in search history is clicked, weather forecast is displayed 
   * Display 5 day weather forecast for searched city
   
- * Integrated bootstrap elements for styling and layout designs in the HTML.Index; with minor direct CSS 
+ * Integrated bootstrap elements for styling and layout designs in the index.html file; with minor direct CSS 
  styling
  
  * CSS to stlye general elements such as the body, text, and color to represent weather severity conditions
