@@ -29,19 +29,20 @@
         <div class="col-4">
 
             <div class="card">
-                <h3 class="card-header text-center">Search for a City:</h3>
+                <h3 class="card-header text-centercd ">Search for a City:</h3>
                 <form id="user-form" class="card-body">
                     <input name="city" id="city" type="text" autofocus="true" class="form-input">
-                    <button type="submit" class="btn">Search</button>
+                    <button type="submit" class="btn" id="fetchBtn">Search</button>
+                    <div class="flex-column" id="stats"></div>
                 </form>
             </div>
 
         </div>
 
         <!--Searched Cities-container-->
-        <div class="card col-3">
+        <div class="row justify-content-start">
 
-            <div class="row justify-content-start">
+            <div class="card col-3">
                 <h2 class="card-header subtitle" id="searched-items">List of Cities Searched:</h2>
                 <div class="card-body list-group" id="searched-item-container"></div>
             </div>
@@ -63,7 +64,9 @@
                 <div class="card col-8">
 
                     <h2 class="card-header">5-Day Forecast</h2>
-                    <div class="card-body"></div>
+                    <div class="card-body">
+                        
+                    </div>
 
                 </div>
             </div>
