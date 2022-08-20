@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forecast</title>
+
+    <link rel="stylesheet" src="./assets/css/style.css">
+
+</head>
+
+
+<body>
+
+    <header>
+        <h1 class="app-title">My Weather</h1>
+        <P>Search for a cities weather forecast.</P>
+    </header>
+
+    <main class="flex-row justify-space-between">
+
+        <!--Search for City-container-->
+        <div class="col-12 col-md-4">
+
+            <div class="card">
+                <h3 class="card-header">Search for a City:</h3>
+                <form id="user-form" class="card-body">
+                    <input name="city" id="city" type="text" autofocus="true" class="form-input">
+                    <button type="submit" class="btn">Search</button>
+                </form>
+            </div>
+
+        </div>
+
+        <!--Searched Cities-container-->
+        <div class="col-12 col-md-8">
+
+            <h2 class="subtitle">List of Cities Searched: <span id="repo-search-term"></span></h2>
+            <div id="repos-container" class="list-group">
+      
+            </div>
+        </div>
+
+        <!--Searched City Current Forecast-container-->
+        <div>
+            
+        </div>
+        
+        <!--Searched City 5-day Forecast-container-->
+        <div>
+
+        </div>
+
+    </main>
+    
+    <script src="./assets/js/weather.js"></script>
+</body>
+
+</html>
