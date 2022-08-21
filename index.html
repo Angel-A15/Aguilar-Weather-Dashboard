@@ -12,51 +12,39 @@
     <!--added bootstrap api-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <!--added css file script-->
-    <link rel="stylesheet" src="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
 
 </head>
 
 
 <body>
 
-    <header class="container text-center">
+    <header class="container text-center bg-light">
         <h1 class="app-title">My Weather</h1>
         <P>Plan ahead and know your cities weather!</P>
     </header>
 
-    <main class="flex-row justify-space-between">
+    <main>
 
         <!--Search for City-container-->
-        <div class="col-4">
+        <div class='container border'>
 
-            <div class="card">
-                <h3 class="card-header text-centercd ">Search for a City:</h3>
-                <form id="user-form" class="card-body">
-                    <input name="city" id="city" type="text" autofocus="true" class="form-input">
-                    <button type="submit" class="btn" id="fetchBtn">Search</button>
-                    <div class="flex-column" id="stats"></div>
-                </form>
-            </div>
+            <div class="row justify-content-center">
 
-        </div>
+                <div class="col-3 card text-center" id="mr">
+                    
+                    <h3 class="bg-light card-header ">Search for a City:</h3>
+                    <form id="user-form" class="row card-body">
+                        <input name="city" id="search-bar" type="text" autofocus="true" class="form-input">
+                        <button type="submit" class="btn bg-light" id="fetchBtn">Search</button>
+                        <div class="flex-column" id="stats"></div>
+                    </form>
 
-        <!--Searched Cities-container-->
-        <div class="row justify-content-start">
-
-            <div class="card col-3">
-                <h2 class="card-header subtitle" id="searched-items">List of Cities Searched:</h2>
-                <div class="card-body list-group" id="searched-item-container"></div>
-            </div>
-        </div>
-
-        <div class="container">
-
-            <div class="row justify-content-end">
-
+                </div>
                 <!--Searched City Current Forecast-container-->
-                <div class="card col-8">
+                <div class="card row col-6 " id="ml">
 
-                    <h2 class="card-header">City Weather</h2>
+                    <h2 class="card-header bg-light">City Weather</h2>
                     <div class="card-body">
                         <p id="city-name"></p>
                         <p id="temperature"></p>
@@ -64,21 +52,36 @@
                         <p id="humidity"></p>
                         <p id="uv"></p>
                     </div>
+                </div>
                     
-                </div>
-                
-                <!--Searched City 5-day Forecast-container-->
-                <div class="card col-8">
-
-                    <h2 class="card-header">5-Day Forecast</h2>
-                    <div class="card-body">
-                        
-                    </div>
-
-                </div>
             </div>
-            
+
         </div>
+
+        <!--Searched Cities-container-->
+        <div class="container border">
+
+            <div class="row justify-content-center">
+                
+                <div class="col-3 card text-center" id="mr">
+
+                    <h2 class="bg-light card-header subtitle" id="searched-items">List of Cities Searched:</h2>
+                    <div class="card-body list-group" id="searched-item-container"></div>
+
+                </div>
+        
+                <!--Searched City 5-day Forecast-container-->
+                <div class="card row col-6" id="ml">
+
+                    <h2 class="card-header bg-light">5-Day Forecast</h2>
+                    <div class="card-body"></div>
+
+                </div>
+
+            </div>
+
+        </div>
+            
 
     </main>
     <!--added js file script-->

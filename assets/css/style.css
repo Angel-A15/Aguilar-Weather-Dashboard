@@ -11,4 +11,30 @@
     box-sizing: border-box;
 }
 
-.card-header
+body{
+    background-color: #7c979e;
+}
+
+.container {
+    max-width: 100%;
+}
+
+.card {
+    border: 2px solid black;
+}
+
+header {
+    border-bottom: 3px solid black;
+}
+
+#ml{
+    margin-left: 290px;
+    height: 300px;
+    margin-top: 50px;
+    
+}
+
+#mr{
+    height: 400px;
+    width: 100px;
+}

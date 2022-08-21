@@ -2,10 +2,10 @@
 //var apiKey = "966a05338762aed9f430379fd9d68bf9";
 
 var fetchBtn = document.querySelector("#fetchBtn")
+var searchValue = document.querySelector("#search-bar")
 
 //weather condition variables
 var cityNameVal =  document.querySelector("#city-name");
-var searchValue = document.querySelector("#fetchBtn")
 var tempVal = document.querySelector("#temperature");
 var windVal =  document.querySelector("#wind");
 var humidVal =  document.querySelector("#humidity");
@@ -28,6 +28,27 @@ function searchBtn(event){
 
 }
 
+//function to fetch weather data from url
+function getWeatherApi(cityName){
+
+    fetch( 
+        'https://api.openweathermap.org/data/2.5/weather?q=' + searchValue.value + '&units=imperial&appid=966a05338762aed9f430379fd9d68bf9')
+
+        .then(function(response){
+            
+            return response.json();
+
+        })
+
+    .then(function(data){
+        //will display to check for response
+        console.log(data);
+
+    });
+    
+}
+
+
 //local storage function
 function weatherStorage(city){
 
@@ -48,23 +69,6 @@ function weatherStorage(city){
         getWeatherApi();
 }
 
-//function to fetch weather data from url
-function getWeatherApi(cityName){
-
-    fetch( 
-        "https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid=${966a05338762aed9f430379fd9d68bf9}")
-
-        .then(function(response){
-            return response.json();
-        })
-
-    .then(function(data){
-        //will display to check for response
-        console.log(data);
-
-    });
-
-}
 
 //fucntion that revieves/updates data:currently working on 
 function weatherData(data){
@@ -72,6 +76,7 @@ function weatherData(data){
 
 }
 
+// console.log('https://api.openweathermap.org/data/2.5/weather?q=Austin&units=imperial&appid=5d525352fa588eed3d6d28ab5746dc12')
 
 //fetch search city data
 fetchBtn.addEventListener('click', getWeatherApi); 
