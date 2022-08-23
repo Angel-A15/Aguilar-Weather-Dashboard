@@ -1,32 +1,29 @@
-:root {
-    --primary: #1100ff;
-    --secondary: #9caea9;
-    --tertiary: #788585;
-    --light-dark: #6f6866;
-    --dark: #38302e;
-    --border-radius: .3rem;
-}
-  
+
 * {
     box-sizing: border-box;
 }
 
+/*styles the body*/
 body{
-    background-color: #7c979e;
+    background-color: #dceff6;
 }
 
+/*styles the containers based on bootstrap*/
 .container {
     max-width: 100%;
 }
 
+/*adds a border to all card class selectots based on bootstrap*/
 .card {
     border: 2px solid black;
 }
 
+/*styles the container of the header*/
 header {
     border-bottom: 3px solid black;
 }
 
+/*styles the city weather and 5 day forecast containers*/
 #ml{
     margin-left: 290px;
     height: 300px;
@@ -34,7 +31,8 @@ header {
     
 }
 
+/*styles the search and list city containers*/
 #mr{
-    height: 400px;
-    width: 100px;
+    height: 150px;
+    margin-top:60px;
 }
