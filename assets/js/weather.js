@@ -1,15 +1,10 @@
-//api set up variables
-var apiKey = "966a05338762aed9f430379fd9d68bf9";
 
 var fetchBtn = document.querySelector("#fetchBtn");
 var searchValue = document.querySelector("#search-bar");
 
 //weather condition variables
 // var cityNameVal = document.querySelector("#city-name");
-var tempVal = document.querySelector("#temperature");
-var windVal = document.querySelector("#wind");
-var humidVal = document.querySelector("#humidity");
-var uvVal = document.querySelector("#uv");
+
 var today = document.querySelector("#todaysWeather")
 var listedCities = document.querySelector("#searched-cities")
 
@@ -24,31 +19,54 @@ function searchBtn(event) {
   //calling weather api and passing the city name for the api call
   getWeatherApi(cityVal);
 
+  getFiveDayApi(cityVal);
+
 
 }
 
-//function to fetch weather data from url
+
+//function for current forecast
 function getWeatherApi(cityName) {
   fetch(
     "https://api.openweathermap.org/data/2.5/weather?q=" +
       cityName +
-      "&units=imperial&appid=966a05338762aed9f430379fd9d68bf9"
+      "&appid=966a05338762aed9f430379fd9d68bf9"
   )
     .then(function (response) {
       return response.json();
     })
     .then(function (data) {
       //will display to check for response
-      console.log(data);
-      today.innerHTML = ''
-      today.append(data.name)
-      today.append(data.main.temp)
-      today.append(data.main.humidity)
-      today.append(data.wind.speed)
-      tempVal.textContent =(data.main.temp);
-
+    
+      today.innerHTML = `
+      <p id="city-name">City: ${data.name}</p>
+      <p id="temperature">Temperature: ${data.main.temp} F</p>
+      <p id="wind">Wind: ${data.wind.speed} MPH</p>
+      <p id="humidity">Humdity: ${data.main.humidity} %</p>
+      <p id="uv">UV Index: ${data.uvi}</p>`
+    
 
     });
+}
+
+//function for 5-day forecast
+function getFiveDayApi(cityName){
+  fetch(
+    'https://api.openweathermap.org/data/2.5/?=' +cityName +
+    '&units=imperial&appid=966a05338762aed9f430379fd9d68bf9'
+  )
+  .then(function(response){
+    return response.json();
+  })
+  .then(function(data){
+    console.log(data);
+    // today.innerHTML = `
+    // <p id="city-name">City: ${data.name}</p>
+    // <p id="temperature">Temperature: ${data.main.temp} F</p>
+    // <p id="wind">Wind: ${data.wind.speed} MPH</p>
+    // <p id="humidity">Humdity: ${data.main.humidity} %</p>
+    // <p id="uv">UV Index: ${data.uvi}</p>`
+  })
 }
 
 
@@ -71,15 +89,10 @@ function weatherStorage(city) {
 
 }
 
-// //fucntion that revieves/updates data:currently working on
-// function weatherData(data) {
-//   var { cityName, teperature, wind, humidity, uv } = data.current;
-// }
+
+//5 day api
+//api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={API key}
 
 //fetch search city data
 fetchBtn.addEventListener("click", searchBtn);
 
-// 'https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}'
-
-// 'https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}=${part}&appid={apiKey}'
-// console.log(`https://api.openweathermap.org/data/2.5/weather?q=Austin&units=imperial&appid=5d525352fa588eed3d6d28ab5746dc12`)

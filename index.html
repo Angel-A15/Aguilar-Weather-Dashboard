@@ -19,7 +19,7 @@
 
 <body>
 
-    <header class="container text-center bg-light">
+    <header class="container text-center" id="topH">
         <h1 class="app-title">My Weather</h1>
         <P>Plan ahead and know your cities weather!</P>
     </header>
@@ -27,30 +27,25 @@
     <main>
 
         <!--Search for City-container-->
-        <div class='container border'>
+        <div class='container'>
 
             <div class="row justify-content-center">
 
-                <div class="col-3 card text-center" id="mr">
+                <div class="mr col-3 card text-center">
                     
-                    <h3 class="bg-light card-header ">Search for a City:</h3>
+                    <h3 class="card-header ">Search for a City:</h3>
                     <form id="user-form" class="row card-body">
                         <input name="city" id="search-bar" type="text" autofocus="true" class="form-input">
-                        <button type="submit" class="btn bg-light" id="fetchBtn">Search</button>
-                        <div class="flex-column" id="stats"></div>
+                        <button type="submit" class="btn" id="fetchBtn">Search</button>
+
                     </form>
 
                 </div>
                 <!--Searched City Current Forecast-container-->
-                <div class="card row col-6 " id="ml">
+                <div class=" card row col-6 " id="ml">
 
-                    <h2 class="card-header bg-light">City Weather</h2>
+                    <h2 class="card-header">City Weather</h2>
                     <div class="card-body" id="todaysWeather">
-                        <p id="city-name"></p>
-                        <p id="temperature"></p>
-                        <p id="wind"></p>
-                        <p id="humidity"></p>
-                        <p id="uv"></p>
                     </div>
                 </div>
                     
@@ -59,13 +54,13 @@
         </div>
 
         <!--Searched Cities-container-->
-        <div class="container border">
+        <div class="container">
 
             <div class="row justify-content-center">
                 
-                <div class="col-3 card text-center" id="mr">
+                <div class="mr col-3 card text-center" id="mr">
 
-                    <h2 class="bg-light card-header subtitle" id="searched-cities">List of Cities Searched:</h2>
+                    <h2 class="card-header subtitle" id="searched-cities">List of Cities Searched:</h2>
                     <div class="card-body list-group" id="searched-item-container"></div>
 
                 </div>
@@ -73,7 +68,7 @@
                 <!--Searched City 5-day Forecast-container-->
                 <div class="card row col-6" id="ml">
 
-                    <h2 class="card-header bg-light">5-Day Forecast</h2>
+                    <h2 class="card-header">5-Day Forecast</h2>
                     <div class="card-body"></div>
 
                 </div>

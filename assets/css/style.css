@@ -5,7 +5,7 @@
 
 /*styles the body*/
 body{
-    background-color: #dceff6;
+    background-color: #edfaff;
 }
 
 /*styles the containers based on bootstrap*/
@@ -20,7 +20,13 @@ body{
 
 /*styles the container of the header*/
 header {
-    border-bottom: 3px solid black;
+
+    border-bottom: 2px solid black;
+}
+
+/*styles header without affecting others*/
+#topH{
+    background-color: rgb(168, 235, 255);
 }
 
 /*styles the city weather and 5 day forecast containers*/
@@ -32,7 +38,20 @@ header {
 }
 
 /*styles the search and list city containers*/
-#mr{
+.mr{
     height: 150px;
     margin-top:60px;
+}
+
+/*styles all four central containers*/
+.card-header{
+    background-color: rgb(168, 235, 255);
+
+}
+
+/*styles the search button*/
+.btn{
+    background-color: rgb(168, 235, 255);
+    width: 50%;
+    margin-left: 25%;
 }
