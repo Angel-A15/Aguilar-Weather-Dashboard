@@ -31,6 +31,7 @@ actions such as:
  
  * CSS to stlye general elements such as the body, text, and color to represent weather severity conditions
  ## Preview to Deployed Page
- 
- 
+ ![Web capture_24-8-2022_225858_angel-a15 github io](https://user-images.githubusercontent.com/106582411/186571599-21d8a7e2-d419-4802-b923-283406239808.jpeg)
+
  ## Link to Page
+https://angel-a15.github.io/Aguilar-Weather-Dashboard/
